@@ -1,0 +1,11 @@
+<h3 class="loud">All Posts</h3>
+
+<% @posts.each do |post| %>
+  <h3 class="loud"><%= sanitize post.title %></h3>
+  <%= link_to 'Show', post %>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+  <%= post.body %>
+<% end %>
+
+<%= link_to 'New post', new_post_path %>

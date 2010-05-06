@@ -1,0 +1,19 @@
+<% field_set_tag 'New Post' do %>
+  <% form_for(@post) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title, :class => :title %>
+    </p>
+    <p>
+      <%= f.label :body %><br />
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  <% end %>
+<% end %>
+
+<%= link_to 'Back', posts_path %>
